@@ -3,19 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EndZoneBox ItemShop</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>EndZoneBox - Official Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Orbitron:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
             background: #0a0f0d;
@@ -23,7 +15,6 @@
             overflow-x: hidden;
         }
 
-        /* ===== NAV ===== */
         nav {
             position: fixed;
             top: 20px;
@@ -40,7 +31,6 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-
         .logo {
             font-family: 'Orbitron', sans-serif;
             font-weight: 800;
@@ -48,11 +38,7 @@
             color: #0a0a12;
             letter-spacing: 1px;
         }
-
-        .logo span {
-            color: #00c97a;
-        }
-
+        .logo span { color: #00c97a; }
         nav a {
             color: #1a1a2e;
             text-decoration: none;
@@ -60,13 +46,8 @@
             font-size: 0.95rem;
             transition: color 0.3s ease, transform 0.3s ease;
         }
+        nav a:hover { color: #00a86b; transform: translateY(-1px); }
 
-        nav a:hover {
-            color: #00a86b;
-            transform: translateY(-1px);
-        }
-
-        /* ===== HERO ===== */
         .hero {
             height: 78vh;
             min-height: 560px;
@@ -80,14 +61,12 @@
             text-align: center;
             position: relative;
         }
-
         .hero::before {
             content: '';
             position: absolute;
             inset: 0;
             background: radial-gradient(ellipse at 50% 40%, transparent 0%, rgba(10,15,13,0.5) 70%);
         }
-
         .hero-content {
             position: relative;
             z-index: 2;
@@ -95,20 +74,16 @@
             transform: translateY(30px);
             animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
         }
-
         .hero h1 {
             font-family: 'Orbitron', sans-serif;
             font-size: clamp(2.6rem, 7vw, 5.2rem);
             font-weight: 800;
             color: #00e88a;
-            text-shadow: 
-                0 0 20px rgba(0,232,138,0.5),
-                0 0 60px rgba(0,232,138,0.2);
+            text-shadow: 0 0 20px rgba(0,232,138,0.5), 0 0 60px rgba(0,232,138,0.2);
             letter-spacing: 3px;
             margin-bottom: 14px;
             text-transform: uppercase;
         }
-
         .hero p {
             font-size: 1.25rem;
             color: #c8d4cc;
@@ -118,13 +93,11 @@
             animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
         }
 
-        /* ===== SECTIONS ===== */
         section {
             padding: 90px 24px;
             max-width: 1280px;
             margin: 0 auto;
         }
-
         .section-title {
             text-align: center;
             font-family: 'Orbitron', sans-serif;
@@ -139,19 +112,13 @@
             transform: translateY(20px);
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
+        .section-title.visible { opacity: 1; transform: translateY(0); }
 
-        .section-title.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== CARDS ===== */
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
             gap: 32px;
         }
-
         .card {
             background: linear-gradient(160deg, #121a16 0%, #1a2420 100%);
             border-radius: 24px;
@@ -160,31 +127,20 @@
             box-shadow: 0 8px 28px rgba(0,0,0,0.25);
             opacity: 0;
             transform: translateY(40px);
-            transition: 
-                opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.35s ease,
-                border-color 0.35s ease;
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
         }
-
-        .card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        .card.visible { opacity: 1; transform: translateY(0); }
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,200,120,0.15);
             border-color: rgba(0,200,120,0.3);
         }
-
         .card-img-wrap {
             position: relative;
             overflow: hidden;
             aspect-ratio: 1 / 1;
             background: #0d1411;
         }
-
         .card-img {
             width: 100%;
             height: 100%;
@@ -194,23 +150,19 @@
             image-rendering: -webkit-optimize-contrast;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
-        .card:hover .card-img {
-            transform: scale(1.05);
-        }
-
+        .card:hover .card-img { transform: scale(1.05); }
         .card-body {
             padding: 24px 20px 28px;
             text-align: center;
         }
-
         .card-body h3 {
-            font-size: 1.45rem;
+            font-family: 'Cinzel', serif;
+            font-size: 1.55rem;
             font-weight: 700;
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
-
         .price {
             font-size: 1.55rem;
             font-weight: 700;
@@ -218,18 +170,13 @@
             margin-bottom: 14px;
             transition: transform 0.3s ease;
         }
-
-        .card:hover .price {
-            transform: scale(1.05);
-        }
-
+        .card:hover .price { transform: scale(1.05); }
         .desc {
             font-size: 0.9rem;
             color: #a0b0a8;
             margin-bottom: 20px;
             line-height: 1.5;
         }
-
         .btn {
             display: inline-block;
             background: linear-gradient(90deg, #00e88a, #00c4e0);
@@ -239,28 +186,24 @@
             font-weight: 700;
             font-size: 0.95rem;
             text-decoration: none;
+            border: none;
+            cursor: pointer;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             letter-spacing: 0.3px;
-            cursor: pointer;
         }
-
         .btn:hover {
             transform: scale(1.06);
             box-shadow: 0 0 24px rgba(0,232,138,0.45);
         }
 
-        /* Rank colors */
         .vip h3 { color: #ffd700; }
         .svip h3 { color: #ff9f1c; }
         .gvip h3 { color: #00e5ff; }
         .elite h3 { color: #c77dff; }
-
-        /* Key colors */
         .rare h3 { color: #4cc9f0; }
         .epic h3 { color: #b5179e; }
         .legendary h3 { color: #f7b801; }
 
-        /* ===== FOOTER ===== */
         footer {
             text-align: center;
             padding: 45px 20px;
@@ -268,66 +211,200 @@
             font-size: 0.95rem;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
-
         footer a {
             color: #00e88a;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
+        footer a:hover { color: #00c4e0; }
 
-        footer a:hover {
-            color: #00c4e0;
+        /* MODAL */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            padding: 20px;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal {
+            background: linear-gradient(160deg, #121a16 0%, #1a2420 100%);
+            border-radius: 24px;
+            border: 1px solid rgba(0,232,138,0.25);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 440px;
+            padding: 32px 28px;
+            transform: translateY(30px) scale(0.95);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+        .modal-overlay.active .modal {
+            transform: translateY(0) scale(1);
+        }
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+        .modal-close:hover { color: #fff; }
+
+        .modal h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: #00e88a;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .modal-item {
+            font-size: 0.95rem;
+            color: #a0b0a8;
+            margin-bottom: 18px;
+        }
+        .modal-item strong { color: #fff; }
+
+        .step { display: none; }
+        .step.active { display: block; }
+
+        .modal label {
+            display: block;
+            font-size: 0.85rem;
+            color: #a0b0a8;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .modal input {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(0,0,0,0.35);
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.25s;
+            margin-bottom: 20px;
+        }
+        .modal input:focus { border-color: #00e88a; }
+        .modal input::placeholder { color: #555; }
+
+        .pay-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #00e88a, #00c4e0);
+            color: #0a0f0d;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        .pay-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(0,232,138,0.4);
         }
 
-        /* ===== ANIMATIONS ===== */
+        .hint {
+            font-size: 0.85rem;
+            color: #7a8a82;
+            text-align: center;
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+        .paid-badge {
+            display: inline-block;
+            background: rgba(0,232,138,0.15);
+            color: #00e88a;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+
+        .purchase-code {
+            background: rgba(0,232,138,0.1);
+            border: 1px dashed #00e88a;
+            border-radius: 14px;
+            padding: 18px;
+            margin: 18px 0;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.35rem;
+            letter-spacing: 3px;
+            color: #00e88a;
+            word-break: break-all;
+            text-align: center;
+        }
+        .instruction {
+            background: rgba(255,255,255,0.04);
+            border-radius: 14px;
+            padding: 16px;
+            font-size: 0.9rem;
+            color: #c8d4cc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .instruction strong { color: #00e88a; }
+        .instruction ol {
+            margin: 10px 0 0 18px;
+        }
+        .instruction li { margin-bottom: 6px; }
+
         @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -30px);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, 0);
-            }
+            from { opacity: 0; transform: translate(-50%, -30px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
         }
-
         @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         .card:nth-child(1) { transition-delay: 0.05s; }
         .card:nth-child(2) { transition-delay: 0.15s; }
         .card:nth-child(3) { transition-delay: 0.25s; }
         .card:nth-child(4) { transition-delay: 0.35s; }
 
         @media (max-width: 640px) {
-            nav {
-                padding: 10px 20px;
-                gap: 16px;
-            }
+            nav { padding: 10px 20px; gap: 16px; }
             .logo { font-size: 1rem; }
             .hero { height: 65vh; min-height: 480px; }
+            .modal { padding: 26px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV -->
     <nav>
         <div class="logo">END<span>ZONE</span>BOX</div>
         <a href="#">Home</a>
         <a href="https://discord.gg/MhYjrezFuA" target="_blank">Discord</a>
     </nav>
 
-    <!-- HERO -->
     <div class="hero">
         <div class="hero-content">
             <h1>Welcome to EndZoneBox</h1>
@@ -335,11 +412,9 @@
         </div>
     </div>
 
-    <!-- RANKS -->
     <section>
         <h2 class="section-title">RANKS</h2>
         <div class="cards">
-
             <div class="card vip">
                 <div class="card-img-wrap">
                     <img class="card-img" src="https://boxpvpneonpvp.github.io/assets/images/chatgpt-image-13-kwi-2025-18-47-14-1024x1024.png" alt="VIP Rank" loading="lazy">
@@ -348,10 +423,9 @@
                     <h3>VIP</h3>
                     <div class="price">2 €</div>
                     <p class="desc">Full rank description available on our Discord</p>
-                    <a href="https://tipply.pl/@neonpvp" class="btn" target="_blank">Buy Now</a>
+                    <button class="btn" onclick="startPurchase('VIP', '2 €')">Buy Now</button>
                 </div>
             </div>
-
             <div class="card svip">
                 <div class="card-img-wrap">
                     <img class="card-img" src="https://boxpvpneonpvp.github.io/assets/images/raw-815x815.png" alt="SVIP Rank" loading="lazy">
@@ -360,10 +434,9 @@
                     <h3>SVIP</h3>
                     <div class="price">4 €</div>
                     <p class="desc">Full rank description available on our Discord</p>
-                    <a href="https://tipply.pl/@neonpvp" class="btn" target="_blank">Buy Now</a>
+                    <button class="btn" onclick="startPurchase('SVIP', '4 €')">Buy Now</button>
                 </div>
             </div>
-
             <div class="card gvip">
                 <div class="card-img-wrap">
                     <img class="card-img" src="https://boxpvpneonpvp.github.io/assets/images/chatgpt-image-13-kwi-2025-19-38-7-815x815.png" alt="GVIP Rank" loading="lazy">
@@ -372,10 +445,9 @@
                     <h3>GVIP</h3>
                     <div class="price">8 €</div>
                     <p class="desc">Full rank description available on our Discord</p>
-                    <a href="https://tipply.pl/@neonpvp" class="btn" target="_blank">Buy Now</a>
+                    <button class="btn" onclick="startPurchase('GVIP', '8 €')">Buy Now</button>
                 </div>
             </div>
-
             <div class="card elite">
                 <div class="card-img-wrap">
                     <img class="card-img" src="https://boxpvpneonpvp.github.io/assets/images/chatgpt-image-3-sty-2026-17-41-24-815x815.png" alt="ELITE Rank" loading="lazy">
@@ -384,18 +456,15 @@
                     <h3>ELITE</h3>
                     <div class="price">16 €</div>
                     <p class="desc">Full rank description available on our Discord</p>
-                    <a href="https://tipply.pl/@neonpvp" class="btn" target="_blank">Buy Now</a>
+                    <button class="btn" onclick="startPurchase('ELITE', '16 €')">Buy Now</button>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- KEYS -->
     <section>
         <h2 class="section-title">KEYS</h2>
         <div class="cards">
-
             <div class="card rare">
                 <div class="card-img-wrap">
                     <img class="card-img" src="https://boxpvpneonpvp.github.io/assets/images/zrzut-ekranu-2025-12-30-194357-600x596.png" alt="Rare Key" loading="lazy">
@@ -404,10 +473,9 @@
                     <h3>Rare</h3>
                     <div class="price">0.25 €</div>
                     <p class="desc">Rare key for premium crates</p>
-                    <a href="https://tipply.pl/@neonpvp" class="btn" target="_blank">Buy Now</a>
+                    <button class="btn" onclick="startPurchase('Rare Key', '0.25 €')">Buy Now</button>
                 </div>
             </div>
-
             <div class="card epic">
                 <div class="card-img-wrap">
                     <img class="card-img" src="https://boxpvpneonpvp.github.io/assets/images/zrzut-ekranu-2025-12-30-194440-600x602.png" alt="Epic Key" loading="lazy">
@@ -416,10 +484,9 @@
                     <h3>Epic</h3>
                     <div class="price">1 €</div>
                     <p class="desc">Epic key for high-tier crates</p>
-                    <a href="https://tipply.pl/@neonpvp" class="btn" target="_blank">Buy Now</a>
+                    <button class="btn" onclick="startPurchase('Epic Key', '1 €')">Buy Now</button>
                 </div>
             </div>
-
             <div class="card legendary">
                 <div class="card-img-wrap">
                     <img class="card-img" src="https://boxpvpneonpvp.github.io/assets/images/zrzut-ekranu-2025-12-30-194416-600x599.png" alt="Legendary Key" loading="lazy">
@@ -428,10 +495,9 @@
                     <h3>Legendary</h3>
                     <div class="price">3 €</div>
                     <p class="desc">Legendary key for the best crates</p>
-                    <a href="https://tipply.pl/@neonpvp" class="btn" target="_blank">Buy Now</a>
+                    <button class="btn" onclick="startPurchase('Legendary Key', '3 €')">Buy Now</button>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -439,22 +505,145 @@
         <p>Enjoy your purchases • <a href="#">EndZoneBox</a> © 2026</p>
     </footer>
 
+    <!-- AFTER PAYMENT MODAL: nick + code -->
+    <div class="modal-overlay" id="purchaseModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+
+            <!-- STEP: Enter nick (shown right after returning from Tipply) -->
+            <div class="step active" id="stepNick">
+                <div class="paid-badge">✓ Payment completed</div>
+                <h2>Enter Your Nickname</h2>
+                <p class="modal-item">Item: <strong id="nickItem">—</strong> &nbsp;•&nbsp; Price: <strong id="nickPrice">—</strong></p>
+
+                <label for="nickname">Minecraft nickname</label>
+                <input type="text" id="nickname" placeholder="Your in-game name" maxlength="16" autocomplete="off">
+
+                <button class="pay-btn" onclick="generateCode()">Get Purchase Code</button>
+                <p class="hint">You get your purchase code only after payment.</p>
+            </div>
+
+            <!-- STEP: Code + screenshot instruction -->
+            <div class="step" id="stepCode">
+                <h2>Your Purchase Code</h2>
+                <p class="modal-item">Item: <strong id="resultItem">—</strong> &nbsp;•&nbsp; Nick: <strong id="resultNick">—</strong></p>
+
+                <div class="purchase-code" id="purchaseCode">XXXX-XXXX-XXXX</div>
+
+                <div class="instruction">
+                    <strong>Important – do this now:</strong>
+                    <ol>
+                        <li><strong>Take a screenshot of this screen</strong> (code must be visible)</li>
+                        <li>Open a ticket on our Discord</li>
+                        <li>Send the screenshot in the ticket</li>
+                    </ol>
+                </div>
+
+                <a href="https://discord.gg/MhYjrezFuA" target="_blank" class="pay-btn">Open Discord Ticket</a>
+            </div>
+        </div>
+    </div>
+
     <script>
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -40px 0px'
-        };
+        const TIPPLY_URL = 'https://tipply.pl/@EndZoneBox';
+        const STORAGE_KEY = 'endzonebox_pending';
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, observerOptions);
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.section-title, .card').forEach(el => observer.observe(el));
 
-        document.querySelectorAll('.section-title, .card').forEach(el => {
-            observer.observe(el);
+        function showStep(id) {
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        // 1) Buy Now → save item → go to Tipply
+        function startPurchase(item, price) {
+            sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ item, price, ts: Date.now() }));
+            window.location.href = TIPPLY_URL;
+        }
+
+        // 2) After Tipply: when user returns to this page → open nick + code screen
+        function checkAfterPayment() {
+            const raw = sessionStorage.getItem(STORAGE_KEY);
+            if (!raw) return;
+
+            try {
+                const data = JSON.parse(raw);
+                // only valid for 2 hours
+                if (Date.now() - data.ts > 2 * 60 * 60 * 1000) {
+                    sessionStorage.removeItem(STORAGE_KEY);
+                    return;
+                }
+
+                document.getElementById('nickItem').textContent = data.item;
+                document.getElementById('nickPrice').textContent = data.price;
+                document.getElementById('nickname').value = '';
+                showStep('stepNick');
+                document.getElementById('purchaseModal').classList.add('active');
+                setTimeout(() => document.getElementById('nickname').focus(), 300);
+            } catch (e) {
+                sessionStorage.removeItem(STORAGE_KEY);
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('purchaseModal').classList.remove('active');
+            sessionStorage.removeItem(STORAGE_KEY);
+        }
+
+        function generateCode() {
+            const nick = document.getElementById('nickname').value.trim();
+            if (!nick) {
+                const input = document.getElementById('nickname');
+                input.focus();
+                input.style.borderColor = '#ff5555';
+                setTimeout(() => input.style.borderColor = '', 1500);
+                return;
+            }
+
+            const raw = sessionStorage.getItem(STORAGE_KEY);
+            let item = '—', price = '—';
+            if (raw) {
+                try {
+                    const data = JSON.parse(raw);
+                    item = data.item;
+                    price = data.price;
+                } catch (e) {}
+            }
+
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            let code = '';
+            for (let i = 0; i < 12; i++) {
+                if (i > 0 && i % 4 === 0) code += '-';
+                code += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+
+            document.getElementById('resultItem').textContent = item + ' (' + price + ')';
+            document.getElementById('resultNick').textContent = nick;
+            document.getElementById('purchaseCode').textContent = code;
+
+            // clear pending after code is shown
+            sessionStorage.removeItem(STORAGE_KEY);
+            showStep('stepCode');
+        }
+
+        document.getElementById('purchaseModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('purchaseModal')) closeModal();
+        });
+
+        document.getElementById('nickname').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') generateCode();
+        });
+
+        // Run on load + when user comes back to the tab
+        checkAfterPayment();
+        window.addEventListener('pageshow', checkAfterPayment);
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') checkAfterPayment();
         });
     </script>
 
